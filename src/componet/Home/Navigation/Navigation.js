@@ -9,11 +9,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import "./navigation.css";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const Navigation = () => {
+  const { user, logOut } = useAuth();
   const navigate = useNavigate();
   function handleClick() {
     navigate("/Login");
+  }
+  function dashoard() {
+    navigate("/Teacher");
   }
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -36,10 +41,22 @@ const Navigation = () => {
           >
             Sohel`s Academic Care
           </Typography>
-          {/* <Link to="/login">login</Link> */}
-          <Button onClick={handleClick} color="inherit">
-            Login
+          <Button onClick={dashoard} color="inherit">
+            dashbord
           </Button>
+
+          {/* <Button onClick={handleClick} color="inherit">
+            Login
+          </Button> */}
+          {user?.email ? (
+            <Button onClick={logOut} color="inherit">
+              Logout
+            </Button>
+          ) : (
+            <Button onClick={handleClick} color="inherit">
+              Login
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,14 +1,26 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+  Alert,
+  CircularProgress,
+} from "@mui/material";
 import img1 from "../../../images/img/img1.jpg";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 const Login = () => {
-  const navgate = useNavigate();
+  const { login, islogin, authError, user } = useAuth();
+  const navigate = useNavigate();
   const handleClick = () => {
-    navgate("/register");
+    navigate("/register");
   };
+  const location = useLocation();
   const [loginData, setLoginData] = useState({});
+
   const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -18,6 +30,7 @@ const Login = () => {
     console.log(newLoginData);
   };
   const haldleonSubmit = (e) => {
+    login(loginData.email, loginData.password, location, navigate);
     e.preventDefault();
   };
 
@@ -26,7 +39,7 @@ const Login = () => {
       <Typography
         style={{ fontSize: "20px", fontWeight: "900", textAlign: "center" }}
       >
-        Sign In form
+        Login
       </Typography>
       <Grid sx={{ mt: 4 }} container spacing={2}>
         <Grid item xs={12} sm={6} md={6}>
@@ -57,10 +70,18 @@ const Login = () => {
               variant="contained"
               type="submit"
             >
-              Sign Up
+              Login
             </Button>
             <br /> <br />
             <Button onClick={handleClick}>New user ? please register</Button>
+            {islogin && <CircularProgress color="success" />}
+            {/* {user?.email &&
+              Swal.fire({
+                title: "Register successful!",
+
+                icon: "success",
+              })} */}
+            {authError && <Alert severity="error">{authError}</Alert>}
           </form>
         </Grid>
       </Grid>

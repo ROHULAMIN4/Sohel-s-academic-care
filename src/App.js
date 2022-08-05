@@ -6,17 +6,30 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navigation from "./componet/Home/Navigation/Navigation";
 import Login from "./componet/Home/Login/Login";
 import Resiger from "./componet/Home/NewUser/NewUser";
+import Authprovider from "./context/Authprovider/Authprovider";
+import Teacher from "./componet/Home/Teacher/Teacher";
+import PrivateRoute from "./componet/Home/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navigation></Navigation>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/register" element={<Resiger />} />
-      </Routes>
-    </BrowserRouter>
+    <Authprovider>
+      <BrowserRouter>
+        <Navigation></Navigation>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/register" element={<Resiger />} />
+          <Route
+            path="/Teacher"
+            element={
+              <PrivateRoute>
+                <Teacher />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </Authprovider>
   );
 }
 
