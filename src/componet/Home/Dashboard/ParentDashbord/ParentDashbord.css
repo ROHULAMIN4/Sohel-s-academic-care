@@ -1,0 +1,133 @@
+.main-dash {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.sidebar-dash {
+  background-color: #056a73;
+  width: 100%;
+  height: 100vh;
+}
+.sidebar-dash a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 15px 0px;
+  padding-left: 25px;
+}
+.sidebar-dash a:hover {
+  background-color: #04aa6d;
+  color: white;
+  transition: 0.1s;
+  font-weight: bold;
+}
+.content-dash {
+  /* background-color: teal; */
+  width: 90%;
+  height: 100vh;
+  padding-left: 15px;
+}
+.singUp-btn span {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-dash span {
+    display: none;
+  }
+  .sidebar-dash a {
+    text-align: center;
+    padding-left: 5px;
+  }
+  .fs-icon {
+    font-size: 25px;
+  }
+}
+/* .sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #056a73;
+
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: rgb(243, 243, 243);
+  padding: 16px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #04aa6d;
+  color: white;
+  transition: 0.1s;
+  font-weight: bold;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 100vh;
+  position: fixed;
+  top: 250px;
+}
+.fs-icon {
+  color: white;
+}
+.singUp-btn {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+}
+.singUp-btn span {
+  font-size: 16px;
+}
+@media screen and (max-width: 600px) {
+  .main-dash {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr, 3fr);
+   
+  }
+  .sidebar {
+    width: 20%;
+
+    position: fixed;
+    left: 0;
+  }
+  .sidebar a {
+    float: left;
+    padding: 10px;
+  }
+  div.content {
+    height: 100vh;
+    position: fixed;
+    top: 140px;
+    right: 2;
+
+    width: 80vw;
+    padding-right: 20px;
+
+    margin-right: 40px;
+  }
+  .dashbord-styles {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main-dash {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr, 3fr);
+  
+  }
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  .dashbord-styles {
+    display: none;
+  }
+} */

@@ -1,0 +1,76 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  margin-top: 240px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+
+  object-fit: cover;
+}
+/* small device media query */
+@media only screen and (max-width: 600px) {
+  .swiper-slide {
+    margin-top: -170px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+}
+/* medium screen */
+@media only screen and (min-width: 602px) and (max-width: 800px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    margin-top: -90px;
+  }
+}
+@media only screen and (min-width: 802px) and (max-width: 1000px) {
+  .swiper-slide {
+    margin-top: -50px;
+  }
+}
+@media only screen and (min-width: 1002px) and (max-width: 1200px) {
+  .swiper-slide {
+    margin-top: -10px;
+  }
+}

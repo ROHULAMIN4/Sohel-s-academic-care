@@ -44,7 +44,7 @@ const Resiger = () => {
       // alert("didn`t math");
       return;
     }
-    register(loginData.email, loginData.password, navigate);
+    register(loginData.email, loginData.password, loginData.name, navigate);
     e.preventDefault();
   };
 
@@ -71,33 +71,6 @@ const Resiger = () => {
                 required
                 sx={{ width: "75%", m: 1 }}
               />
-              {/* <TextField
-                required
-                id="standard-basic"
-                label="Father`s name"
-                variant="standard"
-                name="father name"
-                onBlur={handleOnBlur}
-                sx={{ width: "75%", m: 1 }}
-              /> */}
-              {/* <TextField
-                required
-                id="standard-basic"
-                label="Phone Number"
-                variant="standard"
-                name="phone"
-                onBlur={handleOnBlur}
-                sx={{ width: "75%", m: 1 }}
-              /> */}
-              {/* <TextField
-                required
-                id="standard-basic"
-                label="Address"
-                variant="standard"
-                name="Address"
-                onBlur={handleOnBlur}
-                sx={{ width: "75%", m: 1 }}
-              /> */}
               <TextField
                 required
                 id="standard-basic"
@@ -128,29 +101,6 @@ const Resiger = () => {
                 type="password"
                 sx={{ width: "75%", m: 1 }}
               />{" "}
-              <p
-                style={{
-                  marginBottom: "-1px",
-                  marginTop: "-2px",
-                  fontWeight: "600",
-                  color: "tomato",
-                }}
-              >
-                Class
-              </p>
-              {/* <input
-                type="Number"
-                required
-                name="Class"
-                Label="Class"
-                onBlur={handleOnBlur}
-                style={{
-                  width: "73%",
-                  padding: "5px",
-                  borderRadius: "5px",
-                  borderColor: "2px solid tomato",
-                }}
-              /> */}
               {/* select form */}
               <br />
               <br />
@@ -168,14 +118,6 @@ const Resiger = () => {
             </form>
           )}
           {islogin && <CircularProgress color="success" />}
-          {/* {user?.email &&
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Congratulation Your order successfully !",
-              showConfirmButton: false,
-              timer: 1300,
-            })} */}
 
           {authError && <Alert severity="error">{authError}</Alert>}
         </Grid>

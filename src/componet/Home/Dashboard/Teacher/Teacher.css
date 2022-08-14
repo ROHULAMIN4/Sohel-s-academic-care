@@ -1,0 +1,11 @@
+.teacher-main-div {
+  margin-top: 20px;
+}
+.custom-inforamtion {
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .custom-inforamtion {
+    width: 85%;
+  }
+}

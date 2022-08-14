@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 // initializeAuthentication
 initailizeFirebase();
@@ -16,11 +17,22 @@ const useFirebase = () => {
   const auth = getAuth();
 
   //   login new user
-  const register = (email, password, navigate) => {
-    navigate("/");
+  const register = (email, password, name, navigate) => {
     setIsloding(true);
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {})
+      .then((userCredential) => {
+        const newUser = { email, displayName: name };
+        // new infomation added to fireabse login system start
+        setUser(newUser);
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {})
+          .catch((error) => {});
+        // new infomation added to fireabse login system end
+
+        navigate("/");
+      })
       .catch((error) => {
         setAuthError(error.message);
 

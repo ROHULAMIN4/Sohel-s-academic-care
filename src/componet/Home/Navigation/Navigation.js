@@ -13,26 +13,16 @@ import useAuth from "../../../Hooks/useAuth";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
+
   const navigate = useNavigate();
   function handleClick() {
     navigate("/Login");
   }
-  function dashoard() {
-    navigate("/Teacher");
-  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          {/* <IconButton
-            size="small"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
           <Typography
             className="nav"
             variant="small"
@@ -41,20 +31,14 @@ const Navigation = () => {
           >
             Sohel`s Academic Care
           </Typography>
-          <Button onClick={dashoard} color="inherit">
-            dashbord
-          </Button>
 
-          {/* <Button onClick={handleClick} color="inherit">
-            Login
-          </Button> */}
           {user?.email ? (
             <Button onClick={logOut} color="inherit">
-              Logout
+              <span className="nav-login">{user?.displayName}</span>
             </Button>
           ) : (
             <Button onClick={handleClick} color="inherit">
-              Login
+              <span className="nav-login">Login</span>
             </Button>
           )}
         </Toolbar>
