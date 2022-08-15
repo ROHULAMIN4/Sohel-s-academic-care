@@ -23,6 +23,7 @@ import Home from "./componet/Home/Home/Home/Home";
 import Jhanginagors from "./componet/Home/AllEvent/Jahanginagors/Jhanginagors";
 import Sunargaons from "./componet/Home/AllEvent/Sunargaons/Sunargaons";
 import Gopalgonjs from "./componet/Home/AllEvent/Gopamgonj/Gopalgonjs";
+import Footer from "./componet/Home/Footer/Footer";
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
     </Authprovider>
   );

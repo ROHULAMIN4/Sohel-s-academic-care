@@ -6,7 +6,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import "./navigation.css";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -34,11 +35,22 @@ const Navigation = () => {
 
           {user?.email ? (
             <Button onClick={logOut} color="inherit">
-              <span className="nav-login">{user?.displayName}</span>
+              <span className="nav-login">
+                <FontAwesomeIcon
+                  icon={faArrowRightFromBracket}
+                ></FontAwesomeIcon>
+                {user?.displayName}
+              </span>
             </Button>
           ) : (
             <Button onClick={handleClick} color="inherit">
-              <span className="nav-login">Login</span>
+              <span className="nav-login">
+                {" "}
+                <FontAwesomeIcon
+                  icon={faArrowRightFromBracket}
+                ></FontAwesomeIcon>
+                Login
+              </span>
             </Button>
           )}
         </Toolbar>
@@ -46,5 +58,5 @@ const Navigation = () => {
     </Box>
   );
 };
-
+//  <FontAwesomeIcon icon={faArrowRightFromBracket}></FontAwesomeIcon>
 export default Navigation;

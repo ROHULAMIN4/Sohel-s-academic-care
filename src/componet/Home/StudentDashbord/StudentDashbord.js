@@ -50,7 +50,7 @@ const StudentDashbord = () => {
         <Typography
           style={{ fontSize: "20px", fontWeight: "900", textAlign: "center" }}
         >
-          Login
+          Student Information form
         </Typography>
         <Grid sx={{ mt: 4 }} container spacing={2}>
           <Grid item xs={12} sm={6} md={6}>

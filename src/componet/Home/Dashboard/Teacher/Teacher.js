@@ -5,45 +5,39 @@ import Swal from "sweetalert2";
 import "./Teacher.css";
 
 const Teacher = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [info, setInfo] = useState("");
-  const [number, setNumber] = useState("");
-  const [image, setImage] = useState(null);
+  const [loginData, setLoginData] = useState({});
+
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newLoginData = { ...loginData };
+    newLoginData[field] = value;
+    setLoginData(newLoginData);
+  };
 
   const handleOnSubmit = (e) => {
-    e.preventDefault();
-    if (!image) {
-      return;
-    }
-    // for submitting base 64 images
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("image", image);
-    formData.append("info", info);
-    formData.append("number", number);
-    // feching data to server
-
     fetch("http://localhost:5000/teacher", {
       method: "POST",
-      body: formData,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(loginData),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Successfully !",
-            showConfirmButton: true,
-          });
+          Swal.fire(
+            "Success!",
+            "Information submitted successfully.",
+            "success"
+          );
+        } else {
+          Swal.fire("error!", "something went wrong", "erroe");
         }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
       });
+    e.preventDefault();
   };
+
   return (
     <div className="teacher-main-div">
       <form onSubmit={handleOnSubmit}>
@@ -51,7 +45,8 @@ const Teacher = () => {
           className="custom-inforamtion"
           label="name"
           type="text"
-          onBlur={(e) => setName(e.target.value)}
+          name="name"
+          onBlur={handleOnBlur}
           variant="standard"
           required
         />
@@ -59,7 +54,8 @@ const Teacher = () => {
         <TextField
           className="custom-inforamtion"
           label="email"
-          onBlur={(e) => setEmail(e.target.value)}
+          name="email"
+          onBlur={handleOnBlur}
           type="email"
           variant="standard"
           required
@@ -68,7 +64,8 @@ const Teacher = () => {
         <TextField
           className="custom-inforamtion"
           label="Phone Number"
-          onBlur={(e) => setNumber(e.target.value)}
+          name="phone"
+          onBlur={handleOnBlur}
           type="number"
           variant="standard"
           required
@@ -77,18 +74,22 @@ const Teacher = () => {
         <TextField
           className="custom-inforamtion"
           label="Studyinformation"
-          onBlur={(e) => setInfo(e.target.value)}
+          name="info"
+          onBlur={handleOnBlur}
           type="text"
           variant="standard"
           required
         />
         <br />
         <br />
-        <input
-          onChange={(e) => setImage(e.target.files[0])}
-          accept="image/*"
-          type="file"
+        <TextField
           className="custom-inforamtion"
+          label="Image"
+          name="img"
+          onBlur={handleOnBlur}
+          type="text"
+          variant="standard"
+          required
         />
         <br />
         <br />

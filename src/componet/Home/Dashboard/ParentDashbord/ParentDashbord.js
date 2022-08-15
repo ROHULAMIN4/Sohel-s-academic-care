@@ -12,6 +12,8 @@ import {
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@mui/material";
+import useAuth from "../../../../Hooks/useAuth";
+
 const ParentDashbord = () => {
   return (
     <>
@@ -46,9 +48,9 @@ const ParentDashbord = () => {
           </Link>
           <Link to="/dashbord/manageiamges">
             <FontAwesomeIcon icon={faArrowRightFromBracket}></FontAwesomeIcon>
-            <Button className="singUp-btn">
-              <span>Logout</span>
-            </Button>
+            {/* <Button onClick={logOut} className="singUp-btn">
+            
+            </Button> */}
           </Link>
         </div>
         <div className="content-dash">
@@ -62,35 +64,3 @@ const ParentDashbord = () => {
 };
 
 export default ParentDashbord;
-
-//  <div className="main-dash">
-//    <div class="sidebar">
-//      <Link to="/dashbord" class="active">
-//        <FontAwesomeIcon className="fs-icon" icon={faHome} />{" "}
-//        <span className="dashbord-styles">Home</span>
-//      </Link>
-
-//      <Link to="/dashbord/manageresult">
-//
-//        <FontAwesomeIcon
-//          className="fs-icon"
-//          icon={faSquarePollVertical}
-//        ></FontAwesomeIcon>
-//        <span className="dashbord-styles"> Result</span>
-//      </Link>
-
-//      <Link to="/dashbord/manageiamges">
-//        <FontAwesomeIcon className="fs-icon" icon={faImage}></FontAwesomeIcon>
-//        <span className="dashbord-styles"> Photos</span>
-//      </Link>
-//      {/*  */}
-//      <Button className="singUp-btn">
-//        <span>Logout</span>
-//      </Button>
-//    </div>
-
-//    {/* show display */}
-//    <div class="content">
-//      <Outlet></Outlet>
-//    </div>
-//  </div>;
