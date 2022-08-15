@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Home from "./componet/Home/Home/Home";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navigation from "./componet/Home/Navigation/Navigation";
@@ -20,6 +19,10 @@ import ManageReslt from "./componet/Home/Dashboard/ManageResult/ManageResult";
 import ManageImage from "./componet/Home/Dashboard/ManageImage/ManageImage";
 import Inforamtion from "./componet/Home/Dashboard/Information/Inforamtion";
 import Teacher from "./componet/Home/Dashboard/Teacher/Teacher";
+import Home from "./componet/Home/Home/Home/Home";
+import Jhanginagors from "./componet/Home/AllEvent/Jahanginagors/Jhanginagors";
+import Sunargaons from "./componet/Home/AllEvent/Sunargaons/Sunargaons";
+import Gopalgonjs from "./componet/Home/AllEvent/Gopamgonj/Gopalgonjs";
 
 function App() {
   return (
@@ -29,9 +32,12 @@ function App() {
         <IconBar></IconBar>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="ocation1" element={<Jhanginagors />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/register" element={<Resiger />} />
           <Route path="/about" element={<About></About>} />
+          <Route path="ocation2" element={<Sunargaons></Sunargaons>} />
+          <Route path="ocation3" element={<Gopalgonjs></Gopalgonjs>} />
           <Route
             path="/dashbordStudent"
             element={<StudentDashbord></StudentDashbord>}

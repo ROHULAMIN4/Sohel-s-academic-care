@@ -1,14 +1,16 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 import "./Teacher.css";
 
 const Teacher = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [info, setInfo] = useState("");
+  const [number, setNumber] = useState("");
   const [image, setImage] = useState(null);
-  console.log(name, email, image);
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (!image) {
@@ -20,15 +22,23 @@ const Teacher = () => {
     formData.append("email", email);
     formData.append("image", image);
     formData.append("info", info);
+    formData.append("number", number);
     // feching data to server
 
-    fetch("http://localhost:5000/techer", {
+    fetch("http://localhost:5000/teacher", {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success:", data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Successfully !",
+            showConfirmButton: true,
+          });
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -51,6 +61,15 @@ const Teacher = () => {
           label="email"
           onBlur={(e) => setEmail(e.target.value)}
           type="email"
+          variant="standard"
+          required
+        />{" "}
+        <br />
+        <TextField
+          className="custom-inforamtion"
+          label="Phone Number"
+          onBlur={(e) => setNumber(e.target.value)}
+          type="number"
           variant="standard"
           required
         />
