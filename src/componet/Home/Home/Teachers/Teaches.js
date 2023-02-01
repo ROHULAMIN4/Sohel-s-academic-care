@@ -6,7 +6,8 @@ import { Row, Container } from "react-bootstrap";
 const Teaches = () => {
   const [teachers, SetTeahers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/teacher")
+    // https://sohels-server.vercel.app/
+    fetch("https://sohels-server.vercel.app/teacher")
       .then((res) => res.json())
       .then((data) => SetTeahers(data));
   }, []);

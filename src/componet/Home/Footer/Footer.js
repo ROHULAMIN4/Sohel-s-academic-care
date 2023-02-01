@@ -10,9 +10,7 @@ const Footer = () => {
     <footer>
       <ul className="footer-list">
         <li className="footer-item">
-          <p className="my-3">
-            Azoriqqqq is a fishing and aqurium industry service provider.
-          </p>
+          <p className="my-3">Patient people are successful in life</p>
 
           <p className="footer-social">
             Follow Us
@@ -43,10 +41,12 @@ const Footer = () => {
         <li className="footer-item footer-item-contact">
           <h4>Contact With Us</h4>
           <span>
-            <i className="fas fa-mobile-alt"></i> +8801983535597
+            <i className="fas fa-mobile-alt"></i> +8801983535597 01715006882
           </span>
           <span>
-            <i className="fas fa-envelope"></i> md.sajibkhan199413@gmail.com
+            <i className="fas fa-envelope"></i> md.sajibkhan199413@gmail.com{" "}
+            <br></br>
+            rhs06@yahoo.com
           </span>
 
           <InputGroup className="input-group">
@@ -64,7 +64,7 @@ const Footer = () => {
       <ul className="footer-bottom-list">
         <li className="footer-bottom-list--item mb-3 mb-lg-0"></li>
         <li className="footer-bottom-list--item">
-          <small>Terms & Condition | Privacy & Policy | &copy;2022</small>
+          <small>Terms & Condition | Privacy & Policy | &copy;2023</small>
         </li>
       </ul>
     </footer>

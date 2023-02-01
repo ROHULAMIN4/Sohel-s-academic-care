@@ -16,7 +16,7 @@ const Teacher = () => {
   };
 
   const handleOnSubmit = (e) => {
-    fetch("http://localhost:5000/teacher", {
+    fetch("https://sohels-server.vercel.app/teacher", {
       method: "POST",
       headers: {
         "content-type": "application/json",

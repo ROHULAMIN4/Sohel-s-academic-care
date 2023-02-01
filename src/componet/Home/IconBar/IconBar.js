@@ -6,8 +6,12 @@ import About from "@mui/icons-material/InsertDriveFileOutlined";
 import Dashboard from "@mui/icons-material/SettingsOutlined";
 import "./IconBar.css";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const IconBar = () => {
+  const { user } = useAuth();
+  const Check = user.email;
+  console.log(Check);
   const naviget = useNavigate();
   function ParentDashbord() {
     naviget("/dashbord");
@@ -28,6 +32,7 @@ const IconBar = () => {
     naviget("/");
   }
 
+  function target() {}
   return (
     <div className="Parent-icon">
       <p>
@@ -48,7 +53,6 @@ const IconBar = () => {
           Event
         </span>
       </p>
-
       <p>
         <About onClick={about} className="Icon-styles"></About>
         <span onClick={about} className="Icon-name">
@@ -56,16 +60,57 @@ const IconBar = () => {
         </span>
       </p>
       {/* admin */}
-      <p>
-        <Dashboard onClick={ParentDashbord} className="Icon-styles"></Dashboard>
-        <span className="Icon-name">
-          <span onClick={ParentDashbord} className="Icon-name">
-            Dashbord
+
+      {Check === "rohulamin131650@gmail.com" ||
+      Check === "rhs06@yahoo.com" ||
+      Check === "md.sajibkhan199413@gmail.com" ||
+      Check === "armustakim7@gmail.com" ||
+      Check === "mdb38617@gmail.com" ||
+      Check === "kakuleakter7069@gmail.com" ||
+      Check === "kornia01@gmail.com" ||
+      Check === "arifulhaque2251@gmail" ||
+      Check === "seetolakhter@gmail.com" ? (
+        <p>
+          <Dashboard
+            onClick={ParentDashbord}
+            className="Icon-styles"
+          ></Dashboard>
+          <span className="Icon-name">
+            <span onClick={ParentDashbord} className="Icon-name">
+              Dashbord
+            </span>
           </span>
-        </span>
-      </p>
+        </p>
+      ) : (
+        <p>
+          <Dashboard
+            onClick={dashbordStudent}
+            className="Icon-styles"
+          ></Dashboard>
+          <span className="Icon-name">
+            <span onClick={dashbordStudent} className="Icon-name">
+              Dashbord
+            </span>
+          </span>
+        </p>
+      )}
+
+      {/* <p>
+        {" "}
+        <Dashboard
+          onClick={ParentDashbord}
+          className="Icon-styles"
+        ></Dashboard>{" "}
+        <span className="Icon-name">
+          {" "}
+          <span onClick={ParentDashbord} className="Icon-name">
+            Dashbord //{" "}
+          </span>{" "}
+        </span>{" "}
+      </p> */}
+
       {/* student */}
-      <p>
+      {/* <p>
         <Dashboard
           onClick={dashbordStudent}
           className="Icon-styles"
@@ -75,7 +120,7 @@ const IconBar = () => {
             SDashbord
           </span>
         </span>
-      </p>
+      </p> */}
     </div>
   );
 };

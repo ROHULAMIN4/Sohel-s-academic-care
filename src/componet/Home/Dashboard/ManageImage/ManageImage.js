@@ -9,7 +9,7 @@ const ManageImage = () => {
   };
 
   const handleOnSubmit = (e) => {
-    fetch("http://localhost:5000/picture", {
+    fetch("https://sohels-server.vercel.app/picture", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(picInfo),
@@ -29,7 +29,7 @@ const ManageImage = () => {
     e.preventDefault();
   };
   const handleOnSubmit2020 = (e) => {
-    fetch("http://localhost:5000/picture2020", {
+    fetch("https://sohels-server.vercel.app/picture2020", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(picInfo),
@@ -49,7 +49,7 @@ const ManageImage = () => {
     e.preventDefault();
   };
   const handleOnSubmit2022 = (e) => {
-    fetch("http://localhost:5000/picture2022", {
+    fetch("https://sohels-server.vercel.app/picture2022", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(picInfo),

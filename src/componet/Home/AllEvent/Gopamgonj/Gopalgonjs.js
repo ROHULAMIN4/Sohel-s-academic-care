@@ -6,7 +6,7 @@ const Gopalgonjs = () => {
   const [img, setImg] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/picture2022")
+    fetch("https://sohels-server.vercel.app/picture2022")
       .then((res) => res.json())
       .then((data) => setImg(data));
   }, []);

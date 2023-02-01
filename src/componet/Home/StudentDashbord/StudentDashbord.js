@@ -23,7 +23,7 @@ const StudentDashbord = () => {
     setLoginData(newLoginData);
   };
   const haldleonSubmit = (e) => {
-    fetch("http://localhost:5000/student", {
+    fetch("https://sohels-server.vercel.app/student", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -72,11 +72,11 @@ const StudentDashbord = () => {
               />
               <TextField
                 id="standard-basic"
-                label="Your Password"
+                label="Your Name"
                 variant="standard"
-                name="password"
+                name="Name"
                 onBlur={handleOnBlur}
-                type="password"
+                type="Name"
                 sx={{ width: "75%", m: 1 }}
               />{" "}
               <TextField

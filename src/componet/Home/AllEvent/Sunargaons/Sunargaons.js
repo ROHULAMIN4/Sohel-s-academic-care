@@ -6,7 +6,7 @@ const Sunargaons = () => {
   const [img, setImg] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/picture")
+    fetch("https://sohels-server.vercel.app/picture")
       .then((res) => res.json())
       .then((data) => setImg(data));
   }, []);

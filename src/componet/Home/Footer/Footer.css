@@ -85,6 +85,7 @@ footer ul {
 @media (max-width: 668px) {
   footer {
     padding: 2rem;
+    margin-top: 170px;
   }
 
   .footer-list {

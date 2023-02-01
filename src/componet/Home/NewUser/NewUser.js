@@ -64,7 +64,8 @@ const Resiger = () => {
             <form onSubmit={haldleonSubmit}>
               <TextField
                 id="standard-basic"
-                label="Student Name"
+                //
+                label="Your Name"
                 variant="standard"
                 name="name"
                 onBlur={handleOnBlur}
@@ -84,7 +85,7 @@ const Resiger = () => {
               <TextField
                 required
                 id="standard-basic"
-                label="Your Password"
+                label=" Password"
                 variant="standard"
                 name="password"
                 onBlur={handleOnBlur}

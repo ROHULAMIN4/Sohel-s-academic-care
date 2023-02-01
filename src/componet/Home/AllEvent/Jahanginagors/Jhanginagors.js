@@ -5,7 +5,7 @@ import Jahangi from "../Jahangi/Jahangi";
 const Jhanginagors = () => {
   const [img, setImg] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/picture2020")
+    fetch("https://sohels-server.vercel.app/picture2020")
       .then((res) => res.json())
       .then((data) => setImg(data));
   }, []);
